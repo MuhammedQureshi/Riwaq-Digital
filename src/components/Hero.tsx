@@ -1,87 +1,93 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const Hero = () => {
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-      {/* Background Effects */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-3xl" />
-      </div>
-
-      {/* Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px]" />
-
+      {/* Subtle Background Pattern */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsl(220_15%_94%)_0%,hsl(220_15%_97%)_50%,hsl(220_15%_97%)_100%)]" />
+      
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 bg-secondary/50 border border-border rounded-full px-4 py-2 mb-8"
+            transition={{ duration: 0.8 }}
+            className="mb-6"
           >
-            <Sparkles size={16} className="text-primary" />
-            <span className="text-sm text-muted-foreground">Now accepting new projects for 2026</span>
+            <span className="text-sm tracking-[0.2em] uppercase text-muted-foreground">Digital Excellence</span>
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-tight mb-6"
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="text-5xl md:text-6xl lg:text-7xl font-serif font-medium leading-[1.1] mb-8 text-foreground"
           >
-            We build{" "}
-            <span className="gradient-text">digital</span>
+            Crafting Digital
             <br />
-            experiences
+            <span className="text-accent-gradient">Experiences</span> That
+            <br />
+            Inspire
           </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-10"
-          >
-            A web development agency crafting stunning websites and applications that drive growth and captivate users.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
-          >
-            <Button variant="hero" size="xl">
-              Start Your Project
-              <ArrowRight size={20} />
-            </Button>
-            <Button variant="heroOutline" size="xl">
-              View Our Work
-            </Button>
-          </motion.div>
 
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8"
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex justify-center mb-8"
           >
-            {[
-              { value: "150+", label: "Projects Delivered" },
-              { value: "50+", label: "Happy Clients" },
-              { value: "8+", label: "Years Experience" },
-              { value: "99%", label: "Client Satisfaction" },
-            ].map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-display font-bold gradient-text">{stat.value}</div>
-                <div className="text-sm text-muted-foreground mt-1">{stat.label}</div>
-              </div>
-            ))}
+            <div className="divider-accent" />
+          </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed"
+          >
+            We are a boutique web development agency specializing in creating 
+            refined digital solutions for discerning brands and businesses.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          >
+            <Button variant="elegant" size="xl">
+              Start a Project
+              <ArrowRight size={18} />
+            </Button>
+            <Button variant="elegantOutline" size="xl">
+              View Our Work
+            </Button>
           </motion.div>
         </div>
+
+        {/* Stats */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mt-24 pt-12 border-t border-border"
+        >
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
+            {[
+              { value: "150+", label: "Projects" },
+              { value: "50+", label: "Clients" },
+              { value: "8", label: "Years" },
+              { value: "99%", label: "Satisfaction" },
+            ].map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className="text-3xl md:text-4xl font-serif font-medium text-foreground">{stat.value}</div>
+                <div className="text-sm text-muted-foreground mt-1 tracking-wide">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
