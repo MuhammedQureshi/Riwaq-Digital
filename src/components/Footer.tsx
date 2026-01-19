@@ -4,7 +4,7 @@ const footerLinks = {
   company: [
     { name: "About", href: "#about" },
     { name: "Careers", href: "#" },
-    { name: "Blog", href: "#" },
+    { name: "Journal", href: "#" },
   ],
   services: [
     { name: "Web Development", href: "#services" },
@@ -14,7 +14,6 @@ const footerLinks = {
   legal: [
     { name: "Privacy Policy", href: "#" },
     { name: "Terms of Service", href: "#" },
-    { name: "Cookie Policy", href: "#" },
   ],
 };
 
@@ -26,17 +25,17 @@ const socialLinks = [
 
 export const Footer = () => {
   return (
-    <footer className="bg-card border-t border-border py-16">
+    <footer className="bg-primary text-primary-foreground py-20">
       <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
           <div className="lg:col-span-2">
-            <a href="#" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                <span className="text-primary-foreground font-display font-bold text-xl">N</span>
+            <a href="#" className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-sm bg-primary-foreground flex items-center justify-center">
+                <span className="text-primary font-serif font-semibold text-xl">N</span>
               </div>
-              <span className="font-display font-bold text-xl text-foreground">Nexus</span>
+              <span className="font-serif font-semibold text-xl tracking-tight">Nexus</span>
             </a>
-            <p className="text-muted-foreground max-w-sm mb-6">
+            <p className="text-primary-foreground/70 max-w-sm mb-8 leading-relaxed">
               Building exceptional digital experiences that help businesses grow and succeed in the modern world.
             </p>
             <div className="flex gap-4">
@@ -44,20 +43,20 @@ export const Footer = () => {
                 <a
                   key={index}
                   href={social.href}
-                  className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-secondary/80 transition-colors"
+                  className="w-10 h-10 rounded-sm bg-primary-foreground/10 flex items-center justify-center text-primary-foreground/70 hover:text-primary-foreground hover:bg-primary-foreground/20 transition-all duration-300"
                 >
-                  <social.icon size={20} />
+                  <social.icon size={18} />
                 </a>
               ))}
             </div>
           </div>
 
           <div>
-            <h4 className="font-display font-semibold text-foreground mb-4">Company</h4>
-            <ul className="space-y-3">
+            <h4 className="font-medium text-primary-foreground mb-6 tracking-wide">Company</h4>
+            <ul className="space-y-4">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-muted-foreground hover:text-foreground transition-colors">
+                  <a href={link.href} className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-sm">
                     {link.name}
                   </a>
                 </li>
@@ -66,11 +65,11 @@ export const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-display font-semibold text-foreground mb-4">Services</h4>
-            <ul className="space-y-3">
+            <h4 className="font-medium text-primary-foreground mb-6 tracking-wide">Services</h4>
+            <ul className="space-y-4">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-muted-foreground hover:text-foreground transition-colors">
+                  <a href={link.href} className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-sm">
                     {link.name}
                   </a>
                 </li>
@@ -79,11 +78,11 @@ export const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-display font-semibold text-foreground mb-4">Legal</h4>
-            <ul className="space-y-3">
+            <h4 className="font-medium text-primary-foreground mb-6 tracking-wide">Legal</h4>
+            <ul className="space-y-4">
               {footerLinks.legal.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-muted-foreground hover:text-foreground transition-colors">
+                  <a href={link.href} className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-sm">
                     {link.name}
                   </a>
                 </li>
@@ -92,12 +91,12 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-muted-foreground text-sm">
+        <div className="border-t border-primary-foreground/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-primary-foreground/50 text-sm">
             © 2026 Nexus. All rights reserved.
           </p>
-          <p className="text-muted-foreground text-sm">
-            Crafted with passion in San Francisco
+          <p className="text-primary-foreground/50 text-sm">
+            Crafted with precision in San Francisco
           </p>
         </div>
       </div>
